@@ -1,19 +1,21 @@
-# 🎈 Blank app template
+# 🐍 Interactive Python Learning Hub
 
-A simple Streamlit app template for you to modify!
+Welcome to the **Python Learning Hub**! Yeh ek interactive Streamlit web application hai jo Python programming ke core concepts ko clear aur easy tareeqe se samjhane ke liye banaya gaya hai.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## 🚀 Features
+- **Interactive Navigation:** Sidebar ki madad se kisi bhi topic par switch karein.
+- **Code Snippets:** Har topic ke liye clean aur optimized Python code templates.
+- **Cyberpunk UI:** Modern dark mode aur neon accent theme.
 
-### How to run it on your own machine
+## 📚 Topics Covered
+1. Introduction & Basics (Variables, Syntax)
+2. Data Types & Operators (Lists, Tuples, Dicts)
+3. Control Flow (Loops and If-Else)
+4. Functions & Modules
+5. Object-Oriented Programming (OOPs Concepts)
 
-1. Install the requirements
+## 🛠️ How to Run Locally
 
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+1. Clone this repository:
+   ```bash
+   git clone [https://github.com/nainamaurya460-star/blank-app.git](https://github.com/nainamaurya460-star/blank-app.git)
