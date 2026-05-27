@@ -5,18 +5,20 @@ st.set_page_config(page_title="Python Mastery Hub", page_icon="🐍", layout="wi
 
 st.markdown("""
     <style>
-    .main-title { font-size: 45px; font-weight: bold; color: #00ffcc; text-align: center; text-shadow: 2px 2px #000; margin-bottom: 10px; }
-    .phase-header { background: linear-gradient(90deg, #00ffcc, #333); color: #000; padding: 10px; border-radius: 5px; font-size: 24px; font-weight: bold; margin-top: 30px; }
-    .topic-card { background-color: #1e1e2f; border-left: 5px solid #00ffcc; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
-    .example-header { color: #ff007f; font-weight: bold; margin-top: 10px; }
-    .practice-box { background-color: #261b3d; border: 1px dashed #ff007f; padding: 15px; border-radius: 10px; margin-top: 15px; }
+    .main-title { font-size: 42px; font-weight: bold; color: #00ffcc; text-align: center; text-shadow: 2px 2px #000; margin-bottom: 20px; }
+    .phase-header { background: linear-gradient(90deg, #00ffcc, #333); color: #000; padding: 10px; border-radius: 5px; font-size: 24px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; }
+    .sub-header { color: #ff007f; font-size: 20px; font-weight: bold; margin-top: 15px; }
+    .example-box { padding: 12px; border-radius: 8px; background-color: #1e1e2f; border-left: 5px solid #00ffcc; margin-bottom: 15px; }
+    .practice-box { background-color: #261b3d; border: 1px dashed #ff007f; padding: 15px; border-radius: 10px; margin-top: 20px; }
     stCodeBlock { border-radius: 10px; }
     </style>
     """, unsafe_allow_html=True)
 
-# --- SIDEBAR NAVIGATION ---
-st.sidebar.image("https://img.icons8.com/color/144/000000/python--v1.png", width=100)
-st.sidebar.title("Python Roadmap")
+st.markdown('<div class="main-title">⚡ Ultimate Python Learning Bootcamp ⚡</div>', unsafe_allow_html=True)
+
+# --- SIDEBAR ---
+st.sidebar.image("https://img.icons8.com/color/144/000000/python--v1.png", width=90)
+st.sidebar.title("Navigation")
 
 phase = st.sidebar.selectbox("Choose Phase:", [
     "Phase 1: The Basics",
@@ -25,159 +27,86 @@ phase = st.sidebar.selectbox("Choose Phase:", [
     "Phase 4: Advanced Python"
 ])
 
-# --- CONTENT LOGIC ---
-
 # ==========================================
 # PHASE 1: THE BASICS
 # ==========================================
 if phase == "Phase 1: The Basics":
-    st.markdown('<div class="main-title">Phase 1: The Foundation 🧱</div>', unsafe_allow_html=True)
-    
     topic = st.sidebar.radio("Select Topic:", [
-        "Intro & Setup", "Variables & Types", "Type Casting", "Operators", "Conditionals", "Loops & Control"
+        "Intro & Setup", "Variables & Data Types", "Type Casting", "Operators", "Conditional Statements", "Loops & Control"
     ])
 
     if topic == "Intro & Setup":
         st.markdown('<div class="phase-header">Introduction & Setup</div>', unsafe_allow_html=True)
-        st.write("Python install karne ke liye python.org par jayein. Popular IDEs: VS Code, PyCharm, aur Jupyter.")
-        st.subheader("Examples:")
+        st.write("Python ko use karne ke liye aapko official website se ise install karna hota hai. Aap VS Code ya Jupyter Notebook jaise IDEs ka use kar sakte hain.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
         st.code('print("Hello, World!")', language="python")
-        st.code('print(5 + 10) # Simple Math', language="python")
-        st.code('print("Naina\'s Hub") # Using escape characters', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Apna naam 5 baar print karne ka program banayein.<br>2. Ek program likhein jo "Welcome to Python" do alag lines mein print kare.</div>', unsafe_allow_html=True)
+        st.code('print("Welcome to Naina\'s Python Hub")', language="python")
+        st.code('print(5 + 10)  # Direct Math evaluation', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Apna naam aur course 3 alag lines mein print karein.<br>2. Ek simple calculation (multiplication) print statement ke andar karke dikhayein.</div>', unsafe_allow_html=True)
 
-    elif topic == "Variables & Types":
+    elif topic == "Variables & Data Types":
         st.markdown('<div class="phase-header">Variables & Data Types</div>', unsafe_allow_html=True)
-        st.write("Variables data store karne ke containers hote hain.")
-        st.subheader("Examples:")
-        st.code('x = 10 # Integer\ny = 10.5 # Float\nname = "Python" # String\nis_valid = True # Boolean', language="python")
-        st.code('print(type(x)) # Data type check karna', language="python")
-        st.code('a, b, c = 1, 2, "Test" # Multiple assignment', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Char variables banayein (int, float, str, bool) aur unke types print karein.<br>2. Do numbers ko variables mein store karke unka product nikalen.</div>', unsafe_allow_html=True)
+        st.write("Variables data store karne ke liye use hote hain. Python dynamic hai, isliye type batana nahi padta.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('age = 20  # int\npi = 3.14  # float\nname = "Naina"  # str\nis_student = True  # bool', language="python")
+        st.code('print(type(name))  # Output: <class \'str\'>', language="python")
+        st.code('a = b = c = 100  # Multiple variables assign karna', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Teen variables banayein aur unhe ek single print statement mein check karein.<br>2. Kisi variable ka data type runtime par print karke dekhein.</div>', unsafe_allow_html=True)
+
+    elif topic == "Type Casting":
+        st.markdown('<div class="phase-header">Type Casting in Python</div>', unsafe_allow_html=True)
+        st.write("Jab ek data type ko forcefully doosre type mein badla jata hai (jaise string ko integer mein), use Type Casting kehte hain.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('num_str = "10"\nnum_int = int(num_str)  # String to Int', language="python")
+        st.code('val = float(5)  # Int to Float -> 5.0', language="python")
+        st.code('age = 21\nmsg = "My age is " + str(age)  # Int to String for concatenation', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. User se do string inputs lein ("20" aur "30"), unhe integers mein badlein aur unka sum nikalen.<br>2. Ek float number ko integer mein badal kar check karein ki decimal points ka kya hota hai.</div>', unsafe_allow_html=True)
+
+    elif topic == "Operators":
+        st.markdown('<div class="phase-header">Operators (Arithmetic, Logical, Comparison)</div>', unsafe_allow_html=True)
+        st.write("Operators ka use values aur variables par operations perform karne ke liye hota hai.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('res = 10 // 3  # Floor Division (Returns 3)\npow = 2 ** 3  # Power Operator (8)', language="python")
+        st.code('is_equal = (5 == 5)  # Comparison (True)', language="python")
+        st.code('check = (5 > 2) and (3 < 1)  # Logical AND (False)', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Assignment operator (`+=`) ka use karke ek counter variable ko 5 se badhayein.<br>2. Identity operator (`is`) aur Membership operator (`in`) ka ek example likhen.</div>', unsafe_allow_html=True)
+
+    elif topic == "Conditional Statements":
+        st.markdown('<div class="phase-header">Conditional Statements (if, elif, else)</div>', unsafe_allow_html=True)
+        st.write("Decision making ke liye conditionals ka use hota hai. Python mein indentation ka khas dhyan rakha jata hai.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('marks = 85\nif marks >= 90:\n    print("A")\nelif marks >= 75:\n    print("B")\nelse:\n    print("C")', language="python")
+        st.code('num = 10\nmsg = "Even" if num % 2 == 0 else "Odd"  # Ternary Operator', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. User se age input lein aur check karein ki wo vote dene ke liye eligible hai ya nahi.<br>2. Ek nested if statement likhein jo number positive hai ya negative, aur even hai ya odd, dono check kare.</div>', unsafe_allow_html=True)
 
     elif topic == "Loops & Control":
-        st.markdown('<div class="phase-header">Loops & Loop Control</div>', unsafe_allow_html=True)
-        st.write("For loops range ke liye aur While loops condition ke liye use hote hain.")
-        st.subheader("Examples:")
-        st.code('for i in range(5): print(i) # For loop', language="python")
-        st.code('while x < 5: print(x); x+=1 # While loop', language="python")
-        st.code('if i == 3: break # Loop todna', language="python")
-        st.code('if i == 2: continue # Iteration skip karna', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. 1 se 20 tak saare Even numbers print karein.<br>2. Ek infinite while loop banayein jo "stop" likhne par break ho jaye.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="phase-header">Loops & Loop Control (for, while, break, continue, pass)</div>', unsafe_allow_html=True)
+        st.write("Code ko repeat karne ke liye loops ka aur unhe custom control karne ke liye break, continue aur pass ka use hota hai.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('for i in range(1, 6):\n    if i == 3: continue  # 3 skip ho jayega\n    print(i)', language="python")
+        st.code('count = 0\nwhile count < 3:\n    print(count)\n    count += 1', language="python")
+        st.code('def future_function():\n    pass  # Future code ke liye placeholder', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. While loop ka use karke 10 se 1 tak reverse counting print karein.<br>2. Ek loop banayein jo numbers print kare par jaise hi koi number 7 se divide ho, loop break ho jaye.</div>', unsafe_allow_html=True)
 
 # ==========================================
 # PHASE 2: DATA STRUCTURES & FUNCTIONS
 # ==========================================
 elif phase == "Phase 2: Data Structures & Functions":
-    st.markdown('<div class="main-title">Phase 2: Core Python 🧠</div>', unsafe_allow_html=True)
-    
     topic = st.sidebar.radio("Select Topic:", [
-        "Lists & Tuples", "Dicts & Sets", "Functions & Args", "Lambda & Comprehensions", "String Manipulation"
+        "Lists & Tuples", "Dictionaries & Sets", "Functions & Scope", "Lambda & Comprehensions", "String Manipulation"
     ])
 
     if topic == "Lists & Tuples":
-        st.markdown('<div class="phase-header">Lists & Tuples</div>', unsafe_allow_html=True)
-        st.write("Lists mutable (changeable) hoti hain, Tuples immutable (fixed) hoti hain.")
-        st.subheader("Examples:")
-        st.code('my_list = [1, 2, 3]; my_list.append(4) # List update', language="python")
-        st.code('my_tuple = (1, 2, 3) # Tuple fixed hai', language="python")
-        st.code('print(my_list[0:2]) # Slicing', language="python")
-        st.code('my_list.sort() # Sorting', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek list se duplicate elements remove karne ka program banayein.<br>2. Tuple ko list mein convert karke update karein aur wapas tuple banayein.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="phase-header">Lists & Tuples (Mutable vs Immutable)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('fruits = ["apple", "banana"]; fruits.append("mango")  # List is mutable', language="python")
+        st.code('coordinates = (10.5, 20.3)  # Tuple is immutable', language="python")
+        st.code('sub_list = fruits[0:2]  # Slicing syntax', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek list banayein, use reverse karein aur uske second element ko delete karein.<br>2. Ek tuple ke andar list dalkar dekhein ki kya us list ko badla ja sakta hai.</div>', unsafe_allow_html=True)
 
-    elif topic == "Functions & Args":
-        st.markdown('<div class="phase-header">Functions, *args & **kwargs</div>', unsafe_allow_html=True)
-        st.write("Functions code ko reusable banate hain.")
-        st.subheader("Examples:")
-        st.code('def add(a, b): return a + b', language="python")
-        st.code('def multi_sum(*args): return sum(args) # Variable arguments', language="python")
-        st.code('def info(**kwargs): print(kwargs) # Dictionary arguments', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek function banayein jo check kare ki number Prime hai ya nahi.<br>2. *args ka use karke ek calculator function banayein jo kitne bhi numbers add kar sake.</div>', unsafe_allow_html=True)
-
-# ==========================================
-# PHASE 3: INTERMEDIATE PYTHON
-# ==========================================
-elif phase == "Phase 3: Intermediate Python":
-    st.markdown('<div class="main-title">Phase 3: Building Apps 🚀</div>', unsafe_allow_html=True)
-    
-    topic = st.sidebar.radio("Select Topic:", [
-        "File Handling", "Exception Handling", "Modules & Packages", "OOP Basics", "The 4 Pillars of OOP"
-    ])
-
-    if topic == "OOP Basics":
-        st.markdown('<div class="phase-header">Classes & Objects</div>', unsafe_allow_html=True)
-        st.write("OOP (Object Oriented Programming) real-world entities ko simulate karta hai.")
-        st.subheader("Examples:")
-        st.code("""
-class Car:
-    def __init__(self, brand):
-        self.brand = brand
-    def show(self):
-        return f"Car brand is {self.brand}"
-
-c1 = Car("Tesla")
-print(c1.show())
-        """, language="python")
-        st.code('class Student: pass # Empty class', language="python")
-        st.code('setattr(obj, "age", 20) # Dynamic attributes', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek "Bank" class banayein jisme deposit aur withdraw methods hon.<br>2. Class variable aur instance variable ka diff dikhane ke liye ek example likhen.</div>', unsafe_allow_html=True)
-
-    elif topic == "The 4 Pillars of OOP":
-        st.markdown('<div class="phase-header">Inheritance, Polymorphism, Encapsulation, Abstraction</div>', unsafe_allow_html=True)
-        st.subheader("Examples:")
-        st.code('class Child(Parent): # Inheritance', language="python")
-        st.code('self.__private_var = 10 # Encapsulation', language="python")
-        st.code('def speak(self): # Polymorphism (Same method, diff class)', language="python")
-        st.code('from abc import ABC, abstractmethod # Abstraction', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek Inheritance hierarchy banayein: Animal -> Dog.<br>2. Private variable ko access karne ke liye getter aur setter methods banayein.</div>', unsafe_allow_html=True)
-
-# ==========================================
-# PHASE 4: ADVANCED PYTHON
-# ==========================================
-elif phase == "Phase 4: Advanced Python":
-    st.markdown('<div class="main-title">Phase 4: Expert Level 🔥</div>', unsafe_allow_html=True)
-    
-    topic = st.sidebar.radio("Select Topic:", [
-        "Iterators & Generators", "Decorators", "Dunder Methods", "Concurrency (Asyncio)", "Metaprogramming"
-    ])
-
-    if topic == "Iterators & Generators":
-        st.markdown('<div class="phase-header">Iterators & yield</div>', unsafe_allow_html=True)
-        st.write("Generators memory save karne ke liye 'yield' use karte hain.")
-        st.subheader("Examples:")
-        st.code("""
-def my_gen():
-    yield 1
-    yield 2
-
-for val in my_gen(): print(val)
-        """, language="python")
-        st.code('it = iter([1, 2]); next(it) # Iterator Protocol', language="python")
-        st.code('(x*x for x in range(10)) # Generator Expression', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Fibonacci series ke liye ek generator banayein.<br>2. Custom Iterator class banayein jo numbers ko reverse print kare.</div>', unsafe_allow_html=True)
-
-    elif topic == "Concurrency (Asyncio)":
-        st.markdown('<div class="phase-header">Asyncio, Threading, Multiprocessing</div>', unsafe_allow_html=True)
-        st.write("Tasks ko parallel chalane ke liye use hota hai.")
-        st.subheader("Examples:")
-        st.code("""
-import asyncio
-async def main():
-    print("Wait...")
-    await asyncio.sleep(1)
-    print("Done!")
-
-asyncio.run(main())
-        """, language="python")
-        st.code('from threading import Thread # I/O Bound tasks', language="python")
-        st.code('from multiprocessing import Process # CPU Bound tasks', language="python")
-        
-        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Do functions ko asycronously ek sath chalane ka code likhen.<br>2. Threading aur Multiprocessing ke beech ka difference table form mein samjhayein.</div>', unsafe_allow_html=True)
+    elif topic == "Dictionaries & Sets":
+        st.markdown('<div class="phase-header">Dictionaries & Sets</div>', unsafe_allow_html=True)
+        st.write("Dictionaries key-value pairs store karti hain. Sets unique values ka unordered collection hote hain.")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('student = {"name": "Naina", "branch": "CSE"}\nprint(student["name"])', language="python")
+        st.code('my_set = {1, 2, 2, 3}  # Duplicates remove ho jayenge ->
