@@ -105,8 +105,11 @@ elif phase == "Phase 2: Data Structures & Functions":
         st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek list banayein, use reverse karein aur uske second element ko delete karein.<br>2. Ek tuple ke andar list dalkar dekhein ki kya us list ko badla ja sakta hai.</div>', unsafe_allow_html=True)
 
     elif topic == "Dictionaries & Sets":
+       elif topic == "Dictionaries & Sets":
         st.markdown('<div class="phase-header">Dictionaries & Sets</div>', unsafe_allow_html=True)
         st.write("Dictionaries key-value pairs store karti hain. Sets unique values ka unordered collection hote hain.")
         st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
         st.code('student = {"name": "Naina", "branch": "CSE"}\nprint(student["name"])', language="python")
-        st.code('my_set = {1, 2, 2, 3}  # Duplicates remove ho jayenge ->
+        st.code('my_set = {1, 2, 2, 3}  # Duplicates remove ho jayenge -> {1, 2, 3}', language="python")
+        st.code('student["year"] = "3rd"  # Adding new key-value pair', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Do sets ka Union aur Intersection nikalne ka program banayein.<br>2. Ek dictionary par loop chalakar uski saari keys aur values ko alag-alag print karein.</div>', unsafe_allow_html=True)
