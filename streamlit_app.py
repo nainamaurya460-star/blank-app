@@ -105,7 +105,6 @@ elif phase == "Phase 2: Data Structures & Functions":
         st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek list banayein, use reverse karein aur uske second element ko delete karein.<br>2. Ek tuple ke andar list dalkar dekhein ki kya us list ko badla ja sakta hai.</div>', unsafe_allow_html=True)
 
     elif topic == "Dictionaries & Sets":
-       elif topic == "Dictionaries & Sets":
         st.markdown('<div class="phase-header">Dictionaries & Sets</div>', unsafe_allow_html=True)
         st.write("Dictionaries key-value pairs store karti hain. Sets unique values ka unordered collection hote hain.")
         st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
@@ -113,3 +112,99 @@ elif phase == "Phase 2: Data Structures & Functions":
         st.code('my_set = {1, 2, 2, 3}  # Duplicates remove ho jayenge -> {1, 2, 3}', language="python")
         st.code('student["year"] = "3rd"  # Adding new key-value pair', language="python")
         st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Do sets ka Union aur Intersection nikalne ka program banayein.<br>2. Ek dictionary par loop chalakar uski saari keys aur values ko alag-alag print karein.</div>', unsafe_allow_html=True)
+
+    elif topic == "Functions & Scope":
+        st.markdown('<div class="phase-header">Functions, *args, **kwargs & Scope</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('def greet(name): return f"Hello {name}"', language="python")
+        st.code('def dynamic_sum(*args): return sum(args)  # Variable arguments', language="python")
+        st.code('def dynamic_dict(**kwargs): return kwargs  # Keyword arguments', language="python")
+        st.code('x = 10  # Global\ndef dynamic(): local_x = 5  # Local scope', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. *args ka use karke ek function banayein jo sabse bada number return kare.<br>2. Global keyword ka use karke function ke andar se global variable ko modify karein.</div>', unsafe_allow_html=True)
+
+    elif topic == "Lambda & Comprehensions":
+        st.markdown('<div class="phase-header">Lambda Functions & List Comprehensions</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('square = lambda x: x * x\nprint(square(4))  # One-liner function', language="python")
+        st.code('evens = [x for x in range(10) if x % 2 == 0]  # List Comprehension', language="python")
+        st.code('doubles = list(map(lambda x: x*2,))  # Map with Lambda', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. List comprehension ka use karke 1 se 20 tak ke saare odd numbers ki list banayein.<br>2. Lambda function ka use karke do numbers ko multiply karne ka logic likhen.</div>', unsafe_allow_html=True)
+
+    elif topic == "String Manipulation":
+        st.markdown('<div class="phase-header">String Manipulation & Regex</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('name = "Naina"\nprint(f"Developer: {name}")  # F-string formatting', language="python")
+        st.code('tags = "python,streamlit,ai".split(",")  # Split method', language="python")
+        st.code('import re\npattern = r"\\d+"\nmatch = re.findall(pattern, "User460")', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. User se ek email string lein aur regex ka use karke check karein ki wo valid format hai ya nahi.<br>2. Ek string ke saare vowels ko character `*` se replace karne ka program banayein.</div>', unsafe_allow_html=True)
+
+# ==========================================
+# PHASE 3: INTERMEDIATE PYTHON
+# ==========================================
+elif phase == "Phase 3: Intermediate Python":
+    topic = st.sidebar.radio("Select Topic:", [
+        "File Handling", "Exception Handling", "Modules & Packages", "OOP Basics", "The 4 Pillars of OOP"
+    ])
+
+    if topic == "File Handling":
+        st.markdown('<div class="phase-header">File Handling (.txt, .csv, .json)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('with open("test.txt", "w") as f:\n    f.write("Hello Python File!")', language="python")
+        st.code('import json\ndata = json.loads(\'{"name": "Naina"}\')  # JSON parsing', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek text file ko read karke uski total lines aur words count karne ka logic likhen.<br>2. Ek dictionary ko JSON file mein dump (save) karne ka program banayein.</div>', unsafe_allow_html=True)
+
+    elif topic == "Exception Handling":
+        st.markdown('<div class="phase-header">Error & Exception Handling (try-except)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('try:\n    res = 10 / 0\nexcept ZeroDivisionError:\n    print("Zero se divide nahi kar sakte!")\nfinally:\n    print("Yeh hamesha chalega")', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. User se int input lete waqt `ValueError` ko handle karein taaki string dalne par app crash na ho.<br>2. Custom exception create karke use custom condition par `raise` karein.</div>', unsafe_allow_html=True)
+
+    elif topic == "OOP Basics":
+        st.markdown('<div class="phase-header">OOP Basics (Classes, Objects, Magic Methods)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('class Student:\n    def __init__(self, name):\n        self.name = name  # Instance attribute\n    def __str__(self):\n        return f"Student: {self.name}"', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek "Account" class banayein jisme private balance variable ho aur manage karne ke liye methods hon.<br>2. `__len__` magic method ko custom class mein overwrite karke object ki length return karein.</div>', unsafe_allow_html=True)
+
+    elif topic == "The 4 Pillars of OOP":
+        st.markdown('<div class="phase-header">The Four Pillars of OOP</div>', unsafe_allow_html=True)
+        st.write("1. Inheritance | 2. Polymorphism | 3. Encapsulation | 4. Abstraction")
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('class Android(Phone):\n    pass  # Inheritance Example', language="python")
+        st.code('self.__private_key = 123  # Encapsulation (Private variable)', language="python")
+        st.code('from abc import ABC, abstractmethod  # Abstraction tools', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Parent class ke method ka use Child class mein polymorphism ke through method overriding ke sath dikhayein.<br>2. Abstract Base Class (ABC) ka use karke ek functional pattern template implement karein.</div>', unsafe_allow_html=True)
+
+    else:
+        st.write("Topic coming soon...")
+
+# ==========================================
+# PHASE 4: ADVANCED PYTHON
+# ==========================================
+elif phase == "Phase 4: Advanced Python":
+    topic = st.sidebar.radio("Select Topic:", [
+        "Iterators & Generators", "Decorators", "Context Managers", "Concurrency & Parallelism", "Metaprogramming"
+    ])
+
+    if topic == "Iterators & Generators":
+        st.markdown('<div class="phase-header">Iterators & Generators (yield)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('def infinite_stream():\n    n = 1\n    while True:\n        yield n\n        n += 1  # Memory-efficient generation', language="python")
+        st.code('my_iter = iter(); print(next(my_iter))', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek custom range generator function banayein jo negative step values ko bhi handle kar sake.<br>2. Custom Iterator class banayein jo square numbers generate kare.</div>', unsafe_allow_html=True)
+
+    elif topic == "Decorators":
+        st.markdown('<div class="phase-header">Decorators (@decorator)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('def log_info(func):\n    def wrapper(*args, **kwargs):\n        print("Execution started")\n        return func(*args, **kwargs)\n    return wrapper\n\n@log_info\ndef run(): print("App running")', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Ek aisa decorator banayein jo kisi bhi function ke execution time ko calculate karke print kare.<br>2. Chaining Decorators (ek sath do decorators) ka use karke code output modify karein.</div>', unsafe_allow_html=True)
+
+    elif topic == "Concurrency & Parallelism":
+        st.markdown('<div class="phase-header">Concurrency (Asyncio, Threading, Multiprocessing)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">Examples:</div>', unsafe_allow_html=True)
+        st.code('import asyncio\nasync def fetch_data():\n    await asyncio.sleep(1)\n    return "Data"\nasyncio.run(fetch_data())', language="python")
+        st.code('from threading import Thread  # Excellent for I/O tasks', language="python")
+        st.code('from multiprocessing import Process  # Best for CPU intensive calculation', language="python")
+        st.markdown('<div class="practice-box"><h4>📝 Practice Questions:</h4>1. Asyncio tasks ka use karke teen simultaneous web request alerts ko simulate karein.<br>2. Threading pool executioner ka use karke dynamic processing batch processing setup karein.</div>', unsafe_allow_html=True)
+
+    else:
+        st.write("Advanced topic under maintenance. High performance codes inside repository matrix.")
